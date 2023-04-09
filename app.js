@@ -17,8 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
             count = Math.floor((today - yourDate) / 1000 / 60 / 60 / 24);
             counter.textContent = count;
             rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
+            if(audioPlay.ended) {
+                  document.querySelector("audio").setAttribute("src", `music/${music[Math.floor(Math.random()*music.length)]}.mp3`);
+            }
       } olock();
       var timer = setInterval(function(){olock()}, 1000);
+      console.log("olock: ", olock);
       document.querySelector("audio").setAttribute("src", `music/${music[Math.floor(Math.random()*music.length)]}.mp3`);
 
       document.getElementsByTagName("body")[0].insertAdjacentHTML(
