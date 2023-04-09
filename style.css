@@ -30,6 +30,11 @@ h1 {
       grid-row-gap: 10px;
       margin-top: 3.6rem;
 }
+@media only screen and (max-width: 500px) {
+      #wrapper {
+        margin-top: 0;
+      }
+    }
 
 #clock-box, #info {
       grid-column: span 3;
